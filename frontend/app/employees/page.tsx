@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import EmployeeRegistrationForm from "@/components/forms/employeeRegistration";
 import endpoints from "@/api/endpoints.json";
+import Link from "next/link";
 
 type Employee = {
   id: number;
@@ -58,15 +59,15 @@ export default function EmployeesSection() {
   );
 
   useEffect(() => {
-    setLoading(true); // show loading if needed
+    setLoading(true);
 
-    fetch(endpoints.GET_EMPLOYEES) // replace with your backend endpoint
+    fetch(endpoints.GET_EMPLOYEES, { method: "GET", headers: { "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}` } })
         .then((res) => {
             if (!res.ok) throw new Error("Failed to fetch employees");
                 return res.json();
             })
         .then((data: Employee[]) => {
-            setEmployees(data); // populate state with backend data
+            setEmployees(data); 
         })
         .catch((err) => {
             console.error("Error fetching employees:", err);
@@ -114,9 +115,12 @@ export default function EmployeesSection() {
         {/* Employees List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {filteredEmployees.map((emp) => (
+            <Link href={`/employees/description`} key={emp.id} >
+            
             <div
                 key={emp.id}
                 className="flex flex-col bg-white rounded-2xl shadow-md p-4 gap-4 transition-transform duration-200 hover:scale-[1.02]"
+                
                 style={{
                 borderRadius: "16px",
                 backgroundColor: theme.colors.background.primary,
@@ -145,6 +149,7 @@ export default function EmployeesSection() {
                 </div>
                 </div>
             </div>
+            </Link>
             ))}
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center z-50" onClick={() => setShowModal(false)}>

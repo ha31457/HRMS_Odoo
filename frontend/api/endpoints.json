@@ -1,4 +1,6 @@
 {
-    "GET_EMPLOYEES": "/api/employees",
-    "POST_EMPLOYEE": "/api/employees"
+    "LOGIN": "localhost:8080/api/login",
+    "GET_EMPLOYEES": "localhost:8080/api/employees",
+    "POST_EMPLOYEE": "localhost:8080/api/employees",
+    "GET_PROFILE": "localhost:8080/api/employees/{id}"
 }
