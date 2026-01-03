@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{
           fontFamily: theme.typography.fontFamily.primary,
-          backgroundColor: theme.colors.background.primary,
+          backgroundColor: theme.colors.background.muted,
           color: theme.colors.text.body,
         }}
       >

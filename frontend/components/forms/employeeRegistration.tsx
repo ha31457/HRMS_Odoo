@@ -162,7 +162,6 @@ export default function EmployeeRegistrationForm() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4"
-      style={{ backgroundColor: theme.colors.background.muted }}
     >
       <div
         className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-6 max-w-4xl max-h-[80vh] overflow-y-auto scrollbar-themed"
