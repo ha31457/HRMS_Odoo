@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import LoginForm from "@/components/auth/loginform";
-import EmployeeProfile from "@/components/EmployeeProfile";
 
 export default function Home() {
   return (
