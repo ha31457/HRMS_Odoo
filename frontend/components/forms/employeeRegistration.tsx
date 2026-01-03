@@ -493,7 +493,7 @@ export default function EmployeeRegistrationForm() {
                         color: theme.colors.text.heading,
                       }}
                     >
-                      <option value="">Select</option>
+                      <option value="" style={{ backgroundColor: theme.colors.background.primary }}>Select</option>
                       {field.options?.map((o) => (
                         <option key={o} value={o} style={{ backgroundColor: theme.colors.background.primary }}>
                           {o}
