@@ -83,8 +83,54 @@ CREATE TABLE employee_addresses (
     INDEX idx_type (address_type)
 );
 
+CREATE TABLE employee_bank_details (
+    bank_detail_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT UNIQUE NOT NULL,
+    bank_name VARCHAR(200) NOT NULL,
+    account_number VARCHAR(50) NOT NULL,
+    ifsc_code VARCHAR(11) NOT NULL,
+    pan_number VARCHAR(10) NOT NULL,
+    uan_number VARCHAR(12),
+    account_holder_name VARCHAR(200) NOT NULL,
+    branch_name VARCHAR(200),
+    is_verified BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE,
+    INDEX idx_employee (employee_id),
+    INDEX idx_pan (pan_number),
+    INDEX idx_uan (uan_number)
+);
+
 -- ============================================
--- 3. JOB & DEPARTMENT INFORMATION
+-- 3. COMPANY INFORMATION
+-- ============================================
+
+CREATE TABLE company_details (
+    company_id INT PRIMARY KEY AUTO_INCREMENT,
+    company_name VARCHAR(255) NOT NULL,
+    company_location VARCHAR(255) NOT NULL,
+    logo_url VARCHAR(500),
+    registration_number VARCHAR(100),
+    tax_id VARCHAR(50),
+    address_line1 VARCHAR(255),
+    address_line2 VARCHAR(255),
+    city VARCHAR(100),
+    state VARCHAR(100),
+    postal_code VARCHAR(20),
+    country VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(255),
+    website VARCHAR(255),
+    established_date DATE,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_active (is_active)
+);
+
+-- ============================================
+-- 4. JOB & DEPARTMENT INFORMATION
 -- ============================================
 
 CREATE TABLE departments (
@@ -132,7 +178,7 @@ CREATE TABLE employee_job_details (
 );
 
 -- ============================================
--- 4. DOCUMENTS MANAGEMENT
+-- 5. DOCUMENTS MANAGEMENT
 -- ============================================
 
 CREATE TABLE document_types (
@@ -163,7 +209,7 @@ CREATE TABLE employee_documents (
 );
 
 -- ============================================
--- 5. SALARY & PAYROLL MANAGEMENT
+-- 6. SALARY & PAYROLL MANAGEMENT
 -- ============================================
 
 CREATE TABLE salary_components (
