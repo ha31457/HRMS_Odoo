@@ -78,7 +78,7 @@ export default function Navbar() {
                 ✓
             </button>
 
-
+            <Link href="employees/description">
             <button
                 className="h-9 w-9 rounded-full text-sm transition-all duration-200 ease-out
                             hover:-translate-y-[1px] hover:ring-1 hover:ring-offset-2"
@@ -89,6 +89,7 @@ export default function Navbar() {
                 >
                 HP
                 </button>
+            </Link>
 
           </div>
         </div>
