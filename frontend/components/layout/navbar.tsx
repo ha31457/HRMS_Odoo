@@ -22,15 +22,18 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           
           <div className="flex items-center gap-10">
-            <span
-              className="text-xl font-semibold"
-              style={{
-                color: theme.colors.text.heading,
-                fontWeight: theme.typography.fontWeight.semibold,
-              }}
-            >
-              HRMS
-            </span>
+            <Link href="/">
+                <span
+                className="text-xl font-semibold"
+                style={{
+                    color: theme.colors.text.heading,
+                    fontWeight: theme.typography.fontWeight.semibold,
+                    }}
+                    
+                    >
+                HRMS
+                </span>
+            </Link>
 
             <ul className="flex items-center gap-6">
               {NAV_ITEMS.map((item) => (
