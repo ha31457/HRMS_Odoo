@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import LoginForm from "@/components/auth/loginform";
+import EmployeeRegistrationForm from "@/components/forms/employeeRegistration";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
     <Navbar />
 
     <main className="flex-1">
-    <LoginForm />
+    <EmployeeRegistrationForm />
     </main>
 
     <Footer />
