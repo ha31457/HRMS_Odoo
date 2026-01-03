@@ -2,15 +2,15 @@
   "colors": {
     "background": {
       "primary": "#BCBD8B",
-      "secondary": "#FFFFFF",
-      "muted": "#F4F5EC"
+      "secondary": "#DBDD9E",
+      "muted": "#9B9C71"
     },
 
     "text": {
       "heading": "#373D20",
       "body": "#717744",
       "muted": "#8C9260",
-      "inverse": "#FFFFFF"
+      "inverse": "#D7D7D7"
     },
 
     "border": {
