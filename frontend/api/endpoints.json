@@ -1,0 +1,4 @@
+{
+    "GET_EMPLOYEES": "/api/employees",
+    "POST_EMPLOYEE": "/api/employees"
+}
