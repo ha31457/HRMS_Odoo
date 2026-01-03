@@ -95,16 +95,6 @@ export default function LoginForm() {
       )}
     </div>
 
-    <div className="flex justify-end">
-      <a
-        href="#"
-        className="text-sm font-medium transition-colors duration-200 ease-out hover:underline"
-        style={{ color: theme.colors.action.primary }}
-      >
-        Forgot password?
-      </a>
-    </div>
-
     <button
       type="submit"
       onClick={handleSubmit}
